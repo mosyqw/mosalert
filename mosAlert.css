@@ -1,0 +1,175 @@
+#mos-alert{
+	position:fixed;
+	top:0;
+	right:0;
+	left:0;
+	bottom:0;
+	color:rgb(80,80,80);
+	background:rgba(0,0,0,0.4);
+	z-index:9999;
+}
+#mos-frame{
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin-left:-200px;
+	padding:10px;
+	width:380px;
+	background:#FFF;
+	border-radius:8px;
+}
+#mos-frame table{
+	margin:20px 0;
+	min-height:60px;
+	font-size:26px;
+}
+.mos-img{
+	background-position:center center;
+	background-repeat:no-repeat;
+	width:80px;
+}
+.mos-btn{
+	height:36px;
+	padding:20px 0 5px 0;
+}
+.mos-btn a{
+	display:block;
+	width:90px;
+	height:36px;
+	text-align:center;
+	line-height:36px;
+	cursor:pointer;
+	border-radius:5px;
+	color:#FFF;
+	font-size:16px;
+	transition-duration:300ms;
+}
+.mos-sure,.mos-sure-1{
+	margin:auto;
+	background:#FFBE51;
+}
+.mos-sure-1{
+	float:left;
+	margin:0 0 0 90px;
+}
+.mos-cancel{
+	float:right;
+	margin-right:90px;
+	background:#C8C8C8;
+}
+.mos-sure:hover,.mos-sure-1:hover{
+	background:#FF9E3E;
+}
+.mos-cancel:hover{
+	background:#B4B4B4;
+}
+/*动画部分*/
+#mos-alert[mos-animation=show]{
+	animation:showBg 0.3s;
+	-webkit-animation:showBg 0.3s;
+}
+#mos-alert[mos-animation=show] #mos-frame{
+	animation:showFrame 0.3s;
+	-webkit-animation:showFrame 0.3s;
+}
+#mos-alert[mos-animation=hidden]{
+	animation:hiddenBg 0.2s;
+	-webkit-animation:hiddenBg 0.2s;
+}
+#mos-alert[mos-animation=hidden] #mos-frame{
+	animation:hiddenFrame 0.2s;
+	-webkit-animation:hiddenFrame 0.2s;
+}
+
+@keyframes showBg{
+  0%{
+	  background:rgba(0,0,0,0);
+	}
+  100%{
+	  background:rgba(0,0,0,0.4);
+	}
+}
+@-webkit-keyframes showBg{
+  0%{
+	  background:rgba(0,0,0,0);
+	}
+  100%{
+	  background:rgba(0,0,0,0.4);
+	}
+}
+@keyframes showFrame{
+  0%{
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+	}
+  45%{
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+	}
+  80%{
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+	}
+  100%{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+	}
+}
+@-webkit-keyframes showFrame{
+  0%{
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+	}
+  45%{
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+	}
+  80%{
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+	}
+  100%{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+	}
+}
+@keyframes hiddenBg{
+  0%{
+	  background:rgba(0,0,0,0.4);
+	}
+  100%{
+	  background:rgba(0,0,0,0);
+	}
+}
+@-webkit-keyframes hiddenBg{
+  0%{
+	  background:rgba(0,0,0,0.4);
+	}
+  100%{
+	  background:rgba(0,0,0,0);
+	}
+}
+@keyframes hiddenFrame{
+  0%{
+	opacity:1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+	}
+  100%{
+	opacity:0;
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+	}
+}
+@-webkit-keyframes hiddenFrame{
+  0%{
+	opacity:1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+	}
+  100%{
+	opacity:0;
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+	}
+}
